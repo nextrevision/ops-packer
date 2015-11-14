@@ -8,13 +8,14 @@ systemctl enable docker
 ufw disable
 
 git clone http://github.com/mininet/mininet ~/mininet
-cd ~/mininet; sudo python setup.py install
+cd ~/mininet
+sudo python setup.py install
+sudo util/install.sh
 
 sudo -u vagrant /bin/sh -c 'cd && \
   git clone http://git.openswitch.net/openswitch/ops-build ops-build && \
   cd ops-build && \
   make configure genericx86-64 && \
   make && \
-  make export_docker_image'
-
-rm -Rf /home/vagrant/ops-build
+  make export_docker_image && \
+  make distclean'
