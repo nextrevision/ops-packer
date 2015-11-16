@@ -19,3 +19,11 @@ sudo -u vagrant /bin/sh -c 'cd && \
   make && \
   make export_docker_image && \
   make distclean'
+
+cd /home/vagrant
+git clone http://git.openswitch.net/openswitch/ops-vsi
+cd ops-vsi
+python setup.py install
+chown -R vagrant: /home/vagrant/ops-vsi
+
+update-rc.d -f apparmor remove

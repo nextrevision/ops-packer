@@ -2,7 +2,7 @@ apt-get -y autoremove
 apt-get -y clean
 
 echo "cleaning up guest additions"
-rm -rf VboxGuestAdditions.iso VBoxGuestAdditions_*.iso VBoxGuestAdditions_*.iso.?
+rm -rf VBoxGuestAdditions.iso VBoxGuestAdditions_*.iso VBoxGuestAdditions_*.iso.?
 
 echo "cleaning up dhcp leases"
 rm /var/lib/dhcp/*
